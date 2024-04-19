@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeKeeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="toolbar" class="toolbar closed">
+        <!-- Toolbar content goes here -->
+        <button id="toggleButton"></button>
+        <!-- Other toolbar elements -->
+        <button class="toolbar-button">tasks</button>
+        <button class="toolbar-button">Button 2</button>
+        <button class="toolbar-button">Button 3</button>
+    </div>
+    <button id="openToolbarButton" class="openToolbarButton">&#9776;</button>
+    <h1>TimeKeeper: Manage Your Tasks</h1>
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Enter a new task" required>
+        <input type="datetime-local" id="taskDueDate" required>
+        <select id="taskPriority"> 
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <label for="reminderTime">Reminder Time:</label>
+        <input type="number" id="reminderTime" name="reminderTime" min="1" value="10" required>
+        <select id="reminderUnit">
+            <option value="minutes" selected>Minutes</option>
+            <option value="hours">Hours</option>
+            <option value="days">Days</option>
+        </select>
+        <label for="recurrence">Recurrence:</label>
+        <select id="recurrence">
+            <option value="">None</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <ul id="taskList"></ul>
+
+    <script src="utils.js"></script>
+    <script src="taskManager.js"></script>
+    <script src="domHandler.js"></script>
+    <script src="notifications.js"></script>
+    <script src="toolbar.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
