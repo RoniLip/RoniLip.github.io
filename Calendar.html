@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeKeeper Calendar</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="calendar-style.css">
+
+    <!-- rrule lib -->
+    <script src='https://cdn.jsdelivr.net/npm/rrule@2.6.4/dist/es5/rrule.min.js'></script>
+
+<!-- fullcalendar bundle -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+
+<!-- the rrule-to-fullcalendar connector. must go AFTER the rrule lib -->
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/rrule@6.1.11/index.global.min.js'></script>
+
+</head>
+
+
+</head>
+<body>
+    <div id="toolbar" class="toolbar closed">
+        <button id="toggleButton"></button>
+        <a href="Tasks.html" class="toolbar-button">Tasks</a>
+        <a href="Notes.html" class="toolbar-button active">Notes</a>
+        <a href="Calendar.html" class="toolbar-button">Calendar</a>
+    </div>
+    <button id="openToolbarButton" class="openToolbarButton">&#9776;</button>
+    <h1>TimeKeeper: Calendar</h1>
+
+    <div id='calendar'></div>
+
+
+<!-- Single Modal for Adding and Editing Events -->
+<div id="eventModal" style="display: none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); background: white; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+    <form id="eventForm">
+        <input type="hidden" id="eventId">
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" required>
+
+        <label for="eventDate">Start Date:</label>
+        <input type="date" id="eventDate" required>
+
+        <label for="eventEndDate">End Date:</label>
+        <input type="date" id="eventEndDate" required>
+
+        <label for="eventTime">Start Time:</label>
+        <input type="time" id="eventTime">
+
+        <label for="eventEndTime">End Time:</label>
+        <input type="time" id="eventEndTime">
+
+        <label>
+            <input type="checkbox" id="allDayEvent" onchange="toggleAllDay()"> All Day
+        </label>
+
+        <button type="submit">Save Event</button>
+        <button type="button" onclick="closeModal()">Cancel</button>
+    </form>
+</div>
+
+
+<!-- Add New Event Button -->
+
+
+
+<!-- Modal for editing events -->
+<div id="editEventModal" style="display: none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); background: white; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+    <form id="editEventForm">
+        <label for="editEventName">Event Name:</label>
+        <input type="text" id="editEventName" name="editEventName" required>
+        
+        <label for="editEventStartDate">Start Date:</label>
+        <input type="date" id="editEventStartDate" name="editEventStartDate" required>
+
+        <label for="editEventEndDate">End Date:</label>
+        <input type="date" id="editEventEndDate" name="editEventEndDate" required>
+
+        <label for="editEventStartTime">Start Time:</label>
+        <input type="time" id="editEventStartTime" name="editEventStartTime">
+
+        <label for="editEventEndTime">End Time:</label>
+        <input type="time" id="editEventEndTime" name="editEventEndTime">
+
+        <label>
+            <input type="checkbox" id="editAllDayEvent" name="editAllDayEvent" onchange="toggleEditAllDay()"> All Day
+        </label>
+
+        <button type="button" onclick="updateEvent(currentEvent)">Save Changes</button>
+        <button type="button" id="deleteEventButton" onclick="deleteEvent(currentEvent)">Delete Event</button>
+        <button type="button" onclick="closeEditModal()">Cancel</button>
+    </form>
+</div>
+
+
+
+
+<button id="openModalButton" style="margin: 20px;">Add New Event</button>
+
+<script src="utils.js"></script>
+<script src="taskManager.js"></script>
+<script src="toolbar.js"></script>
+<script src="main2.js"></script>
+<script src="calendar.js"></script>
+</body>
+</html>

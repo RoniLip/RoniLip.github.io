@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeKeeper Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="notes-styles.css"> 
+</head>
+<body>
+    <div id="toolbar" class="toolbar closed">
+        <button id="toggleButton"></button>
+        <a href="Tasks.html" class="toolbar-button">Tasks</a>
+        <a href="Notes.html" class="toolbar-button active">Notes</a>
+        <a href="Calendar.html" class="toolbar-button">Calendar</a>
+    </div>
+    <button id="openToolbarButton" class="openToolbarButton">&#9776;</button>
+    <h1>TimeKeeper: Notes</h1>
+    <h2>Keep track of your ideas and thoughts.</h2>
+    <div class="notes-container">
+        <!-- Form and other elements remain inside the notes-container -->
+        <div class="form-row">
+            <form id="noteForm">
+                <textarea id="noteInput" placeholder="Type your note here..." required></textarea>
+                <select id="noteCategory">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Ideas">Ideas</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button type="submit" id="submitButton">Add Note</button>
+            </form>
+        </div>
+        <div>
+            <label for="categoryFilter">Filter by category:</label>
+            <select id="categoryFilter" onchange="filterNotesByCategory()">
+                <option value="All">All</option>
+                <!-- Other options will be dynamically filled from JavaScript -->
+            </select>
+        </div>
+        <input type="text" id="newCategoryInput" placeholder="Add new category">
+        <button type="button" id="addCategoryButton">Add Category</button>
+        <h3>Your Notes</h3>
+        <ul id="notesList"></ul>
+    </div>
+    <script src="utils.js"></script>
+    <script src="toolbar.js"></script>
+    <script src="notesHandler.js"></script>
+    <script src="main2.js"></script>
+</body>
+</html>
