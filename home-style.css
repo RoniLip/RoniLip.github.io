@@ -1,0 +1,50 @@
+ 
+.img-responsive {
+    width: 100px;       
+    height: auto;       
+    display: block;      
+    border: 0;           
+}
+
+body {
+    padding-top: 120px;  
+    padding-left: 380px;
+}
+
+.container {
+    text-align: center; 
+    padding: 20px;       
+    display: flex;
+    justify-content: center;
+    width: 100%;         
+}
+
+
+.feature {
+    display: flex;      
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 20px; 
+    width: 100%;         
+}
+
+.feature img {
+    margin-right: 20px;  
+}
+
+.feature-content {
+    flex: 1;            
+}
+
+.feature h2 {
+    color: #333;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px;
+    margin-top: 100px;
+    width: 100%;
+}

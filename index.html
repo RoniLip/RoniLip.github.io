@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeKeeper</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home-style.css">
+</head>
+<body>
+    <div id="toolbar" class="toolbar closed">
+        <button id="toggleButton"></button>
+        <a href="index.html" class="toolbar-button">Home</a>
+        <a href="Tasks.html" class="toolbar-button">Tasks</a>
+        <a href="Notes.html" class="toolbar-button active">Notes</a>
+        <a href="Calendar.html" class="toolbar-button">Calendar</a>
+    </div>
+    <button id="openToolbarButton" class="openToolbarButton">&#9776;</button>
+    <h1>Welcome to TimeKeeper</h1>
+
+    <main>
+        <section class="features">
+            <div class="feature">
+                <a href="Tasks.html">
+                    <img src="tasks-icon.png" alt="Tasks" class="img-responsive">
+                </a>
+                <div class="feature-content">
+                    <h2>Organize Your Tasks</h2>
+                    <p>Keep track of your daily tasks efficiently.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <a href="Notes.html">
+                    <img src="notes-icon.png" alt="Notes" class="img-responsive">
+                </a>
+                <div class="feature-content">
+                    <h2>Take Notes</h2>
+                    <p>Capture your thoughts and meeting notes.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <a href="Calendar.html">
+                    <img src="calendar-icon.png" alt="Calendar" class="img-responsive">
+                </a>
+                <div class="feature-content">
+                    <h2>View Your Calendar</h2>
+                    <p>Plan your schedule and never miss an appointment.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Contact Us | Terms of Service | Privacy Policy</p>
+    </footer>
+
+    <script src="utils.js"></script>
+    <script src="toolbar.js"></script>
+    <script src="notesHandler.js"></script>
+    <script src="main2.js"></script>
+</body>
+</html>
