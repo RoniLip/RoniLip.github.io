@@ -1,0 +1,52 @@
+
+#calendar {
+    max-width: 800px;
+    margin: 90px auto;
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+#eventModal form {
+    display: flex;
+    flex-direction: column;
+}
+
+#eventModal form label, #eventModal form input, #eventModal form button {
+    font-family: 'TeXGyreAdventor', sans-serif;
+    margin-top: 15px;
+}
+
+#openModalButton {
+    position: fixed; 
+    top: 50px; 
+    left: 20px; 
+    z-index: 1000; 
+    font-family: 'TeXGyreAdventor', sans-serif; 
+}
+
+#editEventModal {
+    display: block; 
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1050; 
+ }
+
+ #editEventForm button {
+    top: 15px;
+    font-family: 'TeXGyreAdventor', sans-serif; 
+    font-size: 14px; 
+}
+
+ 
+
