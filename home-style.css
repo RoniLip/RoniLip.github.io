@@ -1,39 +1,39 @@
-/* Stylesheet for resizing and centering images */
+ 
 .img-responsive {
-    width: 100px;        /* Fixed width for all images */
-    height: auto;        /* Maintain aspect ratio */
-    display: block;      /* Ensures the image is treated as a block-level element */
-    border: 0;           /* Removes any default border that might be applied */
+    width: 100px;       
+    height: auto;       
+    display: block;      
+    border: 0;           
 }
 
 body {
-    padding-top: 120px;  /* Add padding to the top of the body element */
+    padding-top: 120px;  
     padding-left: 380px;
 }
 
 .container {
-    text-align: center;  /* Centers the container's contents */
-    padding: 20px;       /* Adds some padding around the content for better spacing */
+    text-align: center; 
+    padding: 20px;       
     display: flex;
     justify-content: center;
-    width: 100%;         /* Ensures the container takes full width */
+    width: 100%;         
 }
 
 
 .feature {
-    display: flex;       /* Use flexbox to align the image and text */
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Center the content horizontally */
-    margin-bottom: 20px; /* Add some spacing between feature sections */
-    width: 100%;         /* Optional: Set a specific width or max-width if needed */
+    display: flex;      
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 20px; 
+    width: 100%;         
 }
 
 .feature img {
-    margin-right: 20px;  /* Add some spacing between the image and text */
+    margin-right: 20px;  
 }
 
 .feature-content {
-    flex: 1;             /* Allow the text content to grow and fill the remaining space */
+    flex: 1;            
 }
 
 .feature h2 {
