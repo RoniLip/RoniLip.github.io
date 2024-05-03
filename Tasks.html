@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeKeeper Tasks</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.css' rel='stylesheet' />
+
+<!-- Include rrule library -->
+    <script src='https://cdn.jsdelivr.net/npm/rrule@2.6.8/dist/es5/rrule.min.js'></script>
+
+<!-- Include FullCalendar rrule plugin -->
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/rrule@6.1.4/index.global.min.js'></script>
+
+<!-- Include any additional FullCalendar plugins you need -->
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.4/index.global.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.4/index.global.min.js'></script>
+
+</head>
+<body>
+ 
+
+    
+    <div id="toolbar" class="toolbar closed">
+        <button id="toggleButton"></button>
+        <a href="index.html" class="toolbar-button">Home</a>
+        <a href="Tasks.html" class="toolbar-button">Tasks</a>
+        <a href="Notes.html" class="toolbar-button active">Notes</a>
+        <a href="Calendar.html" class="toolbar-button">Calendar</a>
+
+    </div>
+    <button id="openToolbarButton" class="openToolbarButton">&#9776;</button>
+    <h1>TimeKeeper: Manage Your Tasks</h1>
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Enter a new task" required>
+        <input type="datetime-local" id="taskDueDate" required>
+        <select id="taskPriority"> 
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <label for="reminderTime">Reminder Time:</label>
+        <input type="number" id="reminderTime" name="reminderTime" min="1" value="10" required>
+        <select id="reminderUnit">
+            <option value="minutes" selected>Minutes</option>
+            <option value="hours">Hours</option>
+            <option value="days">Days</option>
+        </select>
+        <label for="recurrence">Recurrence:</label>
+        <select id="recurrence">
+            <option value="">None</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <ul id="taskList"></ul>
+
+    <div class="task-lists-container">
+        <div class="task-list">
+            <h2>Daily Tasks</h2>
+            <ul id="dailyTasksList">
+                <!-- Daily tasks will be appended here by the script -->
+            </ul>
+        </div>
+        <div class="task-list">
+            <h2>Weekly Tasks</h2>
+            <ul id="weeklyTasksList">
+                <!-- Weekly tasks will be appended here by the script -->
+            </ul>
+        </div>
+        <div class="task-list">
+            <h2>Monthly Tasks</h2>
+            <ul id="monthlyTasksList">
+                <!-- Monthly tasks will be appended here by the script -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Add these divs within your body tag -->
+    <div id="homePage" class="page"></div>
+
+    
+    <form id="eventForm">
+ 
+    </form>
+
+
+    <script src="utils.js"></script>
+    <script src="toolbar.js"></script>
+  
+    <script src="main.js"></script>
+    <script src="taskManager.js"></script>
+    <script src="DOMhandler.js"></script>
+    <script src="notifications.js"></script>
+    <script src="calendar.js"></script>
+</body>
+</html>
